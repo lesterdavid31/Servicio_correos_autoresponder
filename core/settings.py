@@ -139,6 +139,7 @@ STATIC_URL = 'static/'
 STATICFILES_DIRS= [
     os.path.join(BASE_DIR, 'static')
     ]
+
 STATIC_ROOT = os.path.join(BASE_DIR, 'static_root')
 
 MEDIA_URL = '/media/'
@@ -165,3 +166,4 @@ if not  DEBUG:
     SECURE_SSL_REDIRECT = True
     SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
     STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+    STATIC_ROOT = os.path.join(BASE_DIR, 'static_root')
