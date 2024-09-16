@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block content %}
+
+  <div class="min-h-full">
+    <header class="bg-white shadow">
+      <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+        <h1 class="text-3xl font-bold tracking-tight text-gray-900">Newsletter delete</h1>
+      </div>
+    </header>
+    <main>
+      <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+        <!-- Your content -->
+
+
+
+
+            <!-- component -->
+<link rel="stylesheet" href="https://demos.creative-tim.com/notus-js/assets/styles/tailwind.css">
+<link rel="stylesheet" href="https://demos.creative-tim.com/notus-js/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css">
+
+
+<section class="py-1 bg-blueGray-50">
+<div class="w-full xl:w-8/12 mb-12 xl:mb-0 px-4 mx-auto mt-24">
+  <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded ">
+    <div class="rounded-t mb-0 px-4 py-3 border-0">
+      <div class="flex flex-wrap items-center">
+        <div class="relative w-full px-4 max-w-full flex-grow flex-1">
+          <h3 class="font-semibold text-base text-blueGray-700">Delete broadcast?</h3>
+        </div>
+      </div>
+    </div>
+    <form action="" method="post">
+        {% csrf_token %}
+        
+        <button type="submit" class="px-3 py-2 bg-red-500 rounded-lg text-white">DELETE</button>
+    </form>
+  </div>
+</div>
+</section>
+{% endblock %}

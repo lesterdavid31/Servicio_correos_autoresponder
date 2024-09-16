@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% block content %}
+
+  <div class="min-h-full">
+    <header class="bg-white shadow">
+      <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+        <h1 class="text-3xl font-bold tracking-tight text-gray-900">Newsletters Detail</h1>
+      </div>
+    </header>
+    <main>
+      <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+   
+
+<link rel="stylesheet" href="https://demos.creative-tim.com/notus-js/assets/styles/tailwind.css">
+<link rel="stylesheet" href="https://demos.creative-tim.com/notus-js/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css">
+
+
+<section class="py-1 bg-blueGray-50">
+<div class="w-full xl:w-8/12 mb-12 xl:mb-0 px-4 mx-auto mt-24">
+  <div class="rounded-t mb-0 px-4 py-3 border-0">
+    <div class="flex flex-wrap items-center">
+      <div class="relative w-full px-4 max-w-full flex-grow flex-1">
+        <h3 class="font-semibold text-base text-blueGray-700 text-2xl">Newsletter title: {{newsletter.name}}</h3>
+      </div>
+      <div class="relative w-full px-4 max-w-full flex-grow flex-1 text-right">
+        <a href="{% url "dashboard:update" newsletter.id %}" class="bg-blue-500 text-white active:bg-indigo-600 text-xs font-bold uppercase px-3 py-1 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button">EDIT</a>
+      </div>
+      <div class="relative w-full px-4 max-w-full flex-grow flex-1 text-right">
+        <a href="{% url "dashboard:delete" newsletter.id %}" class="bg-red-500 text-white active:bg-indigo-600 text-xs font-bold uppercase px-3 py-1 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button">DELETE</a>
+      </div>
+    </div>
+  </div>
+  <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded ">
+    
+
+    <div class="block w-full overflow-x-auto">
+      <h1 class="font text-2xl font-bold tracking-tight text-gray-900 sm:text-6xl">subject: {{newsletter.subject}}</h1>
+      <p class="mt-4 text-xl text-gray-500">{{newsletter.body}}</p>
+      
+    </div>
+  </div>
+</div>
+</section>
+      </div>
+    </main>
+  </div>
+{% endblock %}

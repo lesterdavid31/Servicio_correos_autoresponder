@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+{% block content %}
+  <!--       
+  This example requires updating your template:
+
+  ```
+  <html class="h-full bg-gray-100">
+  <body class="h-full">
+  ```
+       -->
+  <div class="min-h-full">
+    <header class="bg-white shadow">
+      <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+        <h1 class="text-3xl font-bold tracking-tight text-gray-900">Broadcast List</h1>
+      </div>
+    </header>
+    <main>
+      <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+        <!-- Your content -->
+
+
+
+
+            <!-- component -->
+<link rel="stylesheet" href="https://demos.creative-tim.com/notus-js/assets/styles/tailwind.css">
+<link rel="stylesheet" href="https://demos.creative-tim.com/notus-js/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css">
+
+
+<section class="py-1 bg-blueGray-50">
+<div class="w-full xl:w-8/12 mb-12 xl:mb-0 px-4 mx-auto mt-24">
+  <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded ">
+    <div class="rounded-t mb-0 px-4 py-3 border-0">
+      <div class="flex flex-wrap items-center">
+        <div class="relative w-full px-4 max-w-full flex-grow flex-1">
+          <h3 class="font-semibold text-base text-blueGray-700"> Newsletters update</h3>
+        </div>
+      </div>
+    </div>
+    <form action="" method="post">
+        {% csrf_token %}
+        <div class="block w-full overflow-x-auto">
+            <label for="" class="block text-sm font-medium dark:text-dark-txt text-gray-700">
+                Name
+            </label>
+            {{form.name}}
+            <label for="" class="block text-sm font-medium dark:text-dark-txt text-gray-700">
+                Subject
+            </label>
+            {{form.subject}}
+
+            <label for="" class="block text-sm font-medium dark:text-dark-txt text-gray-700">
+                Body
+            </label>
+            {{form.body}}
+            <label for="" class="block text-sm font-medium dark:text-dark-txt text-gray-700">
+                Email
+            </label>
+            {{form.email}}
+    
+            <label for="" class="block text-sm font-medium dark:text-dark-txt text-gray-700">
+                Status
+            </label>
+            {{form.status}}
+
+        </div>
+        <button type="submit" class="px-3 py-2 bg-blue-500 rounded-lg text-white">Update</button>
+    </form>
+  </div>
+</div>
+<footer class="relative pt-8 pb-6 mt-16">
+  <div class="container mx-auto px-4">
+    <div class="flex flex-wrap items-center md:justify-between justify-center">
+      <div class="w-full md:w-6/12 px-4 mx-auto text-center">
+        <div class="text-sm text-blueGray-500 font-semibold py-1">
+          Made with <a href="https://www.creative-tim.com/product/notus-js" class="text-blueGray-500 hover:text-gray-800" target="_blank">Notus JS</a> by <a href="https://www.creative-tim.com" class="text-blueGray-500 hover:text-blueGray-800" target="_blank"> Creative Tim</a>.
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+</section>
+      </div>
+    </main>
+  </div>
+{% endblock %}
