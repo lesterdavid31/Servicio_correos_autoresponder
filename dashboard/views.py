@@ -95,3 +95,11 @@ class NewsletterUpdateView(UpdateView):
             }
             
         return render(request, 'dashboard/update.html', context)
+
+
+class NewsletterDeleteView(DeleteView):
+    model = NewsLetter
+    template_name = "dashboard/delete.html"
+    success_url = reverse_lazy("dashboard:list")
+
+
