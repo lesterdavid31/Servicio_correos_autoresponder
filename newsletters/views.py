@@ -8,33 +8,31 @@ from django.core.mail import EmailMessage
 
 # Create your views here.
 def newsletter_signup(request):
-    if request.method == "POST":
-        form = NewsletterUserSgnupForm(request.POST)
-        if form.is_valid():
-            print("formulario valido")
-            instance = form.save(commit=False)
-            if NewsLettersUser.objects.filter(email  = instance.email).exists():
-                print("usuario existente")
-                messages.warning(request, 'Email alredy exists.')
-            else:
-                instance.save()
-                print('usuario guardado')
-                messages.success(request,'Hemos enviado un correo electrónicoa tu correo, Abrelo y enterate de los mejores estilos que tenmos para ti!')
-
-                #correo electronico
-                subject = 'Libro de ciencia'
-                from_email = settings.EMAIL_HOST_USER
-                to_email = [instance.email]
-
-                html_templates ='newsletters/email_templates/welcome.html'
-                html_message = render_to_string(html_templates)
-                message = EmailMessage(subject, html_message, from_email,to_email)
-                message.content_subtype='html'
-                message.send()
+    
+    form = NewsletterUserSgnupForm(request.POST or None)
+    if form.is_valid():
+        print("formulario valido")
+        instance = form.save(commit=False)
+        if NewsLettersUser.objects.filter(email  = instance.email).exists():
+            print("usuario existente")
+            messages.warning(request, 'Email alredy exists.')
         else:
-            print("formulario no válido", form.errors)
+            instance.save()
+            print('usuario guardado')
+            messages.success(request,'Hemos enviado un correo electrónicoa tu correo, Abrelo y enterate de los mejores estilos que tenmos para ti!')
+
+            #correo electronico
+            subject = 'Libro de ciencia'
+            from_email = settings.EMAIL_HOST_USER
+            to_email = [instance.email]
+
+            html_templates ='newsletters/email_templates/welcome.html'
+            html_message = render_to_string(html_templates)
+            message = EmailMessage(subject, html_message, from_email,to_email)
+            message.content_subtype='html'
+            message.send()
     else:
-        form= NewsletterUserSgnupForm()
+        print("formulario no válido", form.errors)
 
     context = {
         'form': form,
